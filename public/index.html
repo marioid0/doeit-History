@@ -1,56 +1,129 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Meu Site com Tailwind</title>
-  <link href="./assets/styles.css" rel="stylesheet" />
-  <script type="module" src="../src/js/main.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page</title>
+  <!-- Tailwind CSS (via CDN para exemplo rápido) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tema escuro baseado na preferência do sistema -->
+  <script>
+    tailwind.config = {
+      darkMode: 'media',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body class="bg-gray-100 text-gray-800">
-    <nav x-data="{ isOpen: false }" class="relative bg-white shadow dark:bg-gray-800">
-    <div class="container px-6 py-3 mx-auto md:flex">
-        <div class="flex items-center justify-between">
-            <a href="#">
-                <img class="w-auto h-6 sm:h-7" src="https://merakiui.com/images/full-logo.svg" alt="">
-            </a>
 
-            <!-- Mobile menu button -->
-            <div class="flex lg:hidden">
-                <button x-cloak @click="isOpen = !isOpen" type="button" class="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400" aria-label="toggle menu">
-                    <svg x-show="!isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
-                    </svg>
-            
-                    <svg x-show="isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
+<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-sans">
+  <!-- Navbar -->
+  <nav class="w-full border-b border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-black/30 backdrop-blur-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16 items-center">
+        <!-- Logo -->
+        <a href="#" class="text-lg font-semibold">MeuProjeto</a>
+
+        <!-- Links de navegação -->
+        <div class="hidden md:flex space-x-6 items-center">
+          <a href="sobre.html" class="hover:underline">Sobre</a>
+          <a href="equipe.html" class="hover:underline">Equipe</a>
+          <a href="faq.html" class="hover:underline">FAQ</a>
+          <!-- Botão de tema -->
+          <button id="theme-toggle" class="ml-4 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
+            <svg id="theme-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m8.66-11h-1M4.34 12h-1m15.36 4.95l-.7-.7M6.05 6.05l-.7-.7m12.02 12.02l-.7-.7M6.05 17.95l-.7-.7M12 5a7 7 0 000 14 7 7 0 000-14z" />
+            </svg>
+          </button>
         </div>
 
-        <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
-        <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']" class="absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white dark:bg-gray-800 md:mt-0 md:p-0 md:top-0 md:relative md:opacity-100 md:translate-x-0 md:flex md:items-center md:justify-between">
-            <div class="flex flex-col px-2 -mx-4 md:flex-row md:mx-10 md:py-0">
-                <a href="#" class="px-2.5 py-2 text-gray-700 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 md:mx-2">Home</a>
-                <a href="#" class="px-2.5 py-2 text-gray-700 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 md:mx-2">About</a>
-                <a href="#" class="px-2.5 py-2 text-gray-700 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 md:mx-2">Contact</a>
-            </div>
-
-            <div class="relative mt-4 md:mt-0">
-                <span class="absolute inset-y-0 left-0 flex items-center pl-3">
-                    <svg class="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="none">
-                        <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg>
-                </span>
-
-                <input type="text" class="w-full py-2 pl-10 pr-4 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-300" placeholder="Search">
-            </div>
+        <!-- Menu mobile -->
+        <div class="md:hidden">
+          <button id="menu-toggle" class="focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
         </div>
+      </div>
     </div>
-</nav>
-  <h1 class="text-3xl font-bold text-center mt-10">Testando configuração do projeto</h1>
 
+    <!-- Mobile menu dropdown -->
+    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
+      <a href="sobre.html" class="block py-2">Sobre</a>
+      <a href="equipe.html" class="block py-2">Equipe</a>
+      <a href="faq.html" class="block py-2">FAQ</a>
+    </div>
+  </nav>
 
+  <!-- Hero Section -->
+  <section class="min-h-[40vh] flex items-center justify-center text-center px-4">
+    <div class="max-w-3xl">
+      <h1 class="text-4xl font-bold mb-4">Bem-vindo ao MeuProjeto</h1>
+      <p class="text-lg text-gray-600 dark:text-gray-400">
+        Um ambiente moderno, minimalista e eficiente para gerenciar suas ideias com estilo.
+      </p>
+    </div>
+  </section>
+
+  <!-- Commits Recentes (placeholder dinâmico) -->
+  <section class="bg-gray-50 dark:bg-gray-800 py-16 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl font-semibold mb-6">Commits Recentes</h2>
+      <div class="space-y-4">
+        <!-- Exemplo de commit -->
+        <div class="bg-white dark:bg-gray-700 p-4 rounded-xl shadow">
+          <p class="text-sm font-medium">🔧 Ajuste no layout responsivo da navbar</p>
+          <p class="text-xs text-gray-500 dark:text-gray-300">commit hash: abc123 - 27/05/2025</p>
+        </div>
+        <div class="bg-white dark:bg-gray-700 p-4 rounded-xl shadow">
+          <p class="text-sm font-medium">✨ Adição da seção de commits recentes</p>
+          <p class="text-xs text-gray-500 dark:text-gray-300">commit hash: def456 - 26/05/2025</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer básico -->
+  <footer class="bg-white dark:bg-black border-t border-gray-200 dark:border-gray-700 py-6 text-center text-sm">
+    <p>&copy; 2025 MeuProjeto. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Toggle do menu mobile
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+
+    // Toggle de tema claro/escuro
+    const toggle = document.getElementById('theme-toggle');
+    const htmlEl = document.documentElement;
+
+    toggle.addEventListener('click', () => {
+      if (htmlEl.classList.contains('dark')) {
+        htmlEl.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        htmlEl.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+
+    // Carregar tema do localStorage
+    if (localStorage.getItem('theme') === 'dark') {
+      htmlEl.classList.add('dark');
+    } else if (localStorage.getItem('theme') === 'light') {
+      htmlEl.classList.remove('dark');
+    }
+  </script>
 </body>
+
 </html>
