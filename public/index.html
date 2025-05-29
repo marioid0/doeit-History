@@ -1,129 +1,137 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Landing Page</title>
-  <!-- Tailwind CSS (via CDN para exemplo rápido) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Tema escuro baseado na preferência do sistema -->
-  <script>
-    tailwind.config = {
-      darkMode: 'media',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'sans-serif']
-          }
-        }
-      }
+  <title>DoeIT</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .typing::after {
+      content: "|";
+      animation: blink 1s step-end infinite;
     }
-  </script>
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+  </style>
 </head>
+<body class="bg-white text-gray-900">
 
-<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-sans">
   <!-- Navbar -->
-  <nav class="w-full border-b border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-black/30 backdrop-blur-sm">
+  <nav class="fixed w-full top-0 z-50 backdrop-blur-md border-b bg-white/80 border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between h-16 items-center">
-        <!-- Logo -->
-        <a href="#" class="text-lg font-semibold">MeuProjeto</a>
-
-        <!-- Links de navegação -->
-        <div class="hidden md:flex space-x-6 items-center">
-          <a href="sobre.html" class="hover:underline">Sobre</a>
-          <a href="equipe.html" class="hover:underline">Equipe</a>
-          <a href="faq.html" class="hover:underline">FAQ</a>
-          <!-- Botão de tema -->
-          <button id="theme-toggle" class="ml-4 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
-            <svg id="theme-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m8.66-11h-1M4.34 12h-1m15.36 4.95l-.7-.7M6.05 6.05l-.7-.7m12.02 12.02l-.7-.7M6.05 17.95l-.7-.7M12 5a7 7 0 000 14 7 7 0 000-14z" />
-            </svg>
-          </button>
-        </div>
-
-        <!-- Menu mobile -->
-        <div class="md:hidden">
-          <button id="menu-toggle" class="focus:outline-none">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-2">
+          <i data-lucide="qr-code" class="h-8 w-8 text-blue-500"></i>
+          <span class="text-xl font-bold">DoeIT</span>
         </div>
       </div>
-    </div>
-
-    <!-- Mobile menu dropdown -->
-    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
-      <a href="sobre.html" class="block py-2">Sobre</a>
-      <a href="equipe.html" class="block py-2">Equipe</a>
-      <a href="faq.html" class="block py-2">FAQ</a>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <section class="min-h-[40vh] flex items-center justify-center text-center px-4">
-    <div class="max-w-3xl">
-      <h1 class="text-4xl font-bold mb-4">Bem-vindo ao MeuProjeto</h1>
-      <p class="text-lg text-gray-600 dark:text-gray-400">
-        Um ambiente moderno, minimalista e eficiente para gerenciar suas ideias com estilo.
+  <section class="pt-24 pb-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto text-center">
+      <div class="inline-flex items-center space-x-2 bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-8">
+        <i data-lucide="shield" class="h-4 w-4"></i>
+        <span>Sistema de Doação Seguro</span>
+      </div>
+      <h1 class="text-4xl md:text-6xl font-bold mb-6">
+        <span class="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">DoeIT</span><br />
+        <span id="typing-text" class="typing"></span>
+      </h1>
+      <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+        Sistema inovador de doações com validação por QR Code, desenvolvido em Laravel pelos 
+        alunos da EEEP Maria Célia Pinheiro Falcão. Transparência e segurança em cada doação.
       </p>
-    </div>
-  </section>
-
-  <!-- Commits Recentes (placeholder dinâmico) -->
-  <section class="bg-gray-50 dark:bg-gray-800 py-16 px-4">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-2xl font-semibold mb-6">Commits Recentes</h2>
-      <div class="space-y-4">
-        <!-- Exemplo de commit -->
-        <div class="bg-white dark:bg-gray-700 p-4 rounded-xl shadow">
-          <p class="text-sm font-medium">🔧 Ajuste no layout responsivo da navbar</p>
-          <p class="text-xs text-gray-500 dark:text-gray-300">commit hash: abc123 - 27/05/2025</p>
-        </div>
-        <div class="bg-white dark:bg-gray-700 p-4 rounded-xl shadow">
-          <p class="text-sm font-medium">✨ Adição da seção de commits recentes</p>
-          <p class="text-xs text-gray-500 dark:text-gray-300">commit hash: def456 - 26/05/2025</p>
-        </div>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href="https://github.com/GuilhermmeDev/doe.it" target="_blank" class="inline-flex items-center space-x-2 bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-medium transition-colors">
+          <i data-lucide="github" class="h-5 w-5"></i>
+          <span>Ver no GitHub</span>
+        </a>
+        <button onclick="document.getElementById('commits').scrollIntoView({behavior: 'smooth'})" class="inline-flex items-center space-x-2 border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white px-8 py-3 rounded-lg font-medium transition-colors">
+          <i data-lucide="git-commit" class="h-5 w-5"></i>
+          <span>Ver Commits</span>
+        </button>
       </div>
     </div>
   </section>
 
-  <!-- Footer básico -->
-  <footer class="bg-white dark:bg-black border-t border-gray-200 dark:border-gray-700 py-6 text-center text-sm">
-    <p>&copy; 2025 MeuProjeto. Todos os direitos reservados.</p>
+  <!-- Commits Section -->
+  <section id="commits" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Histórico de Desenvolvimento</h2>
+        <p class="text-xl text-gray-600">Acompanhe os últimos commits do projeto</p>
+      </div>
+      <div id="commits-container" class="space-y-4 text-sm text-left"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 border-t bg-white border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <div class="flex items-center justify-center space-x-2 mb-4">
+          <i data-lucide="qr-code" class="h-8 w-8 text-blue-500"></i>
+          <span class="text-2xl font-bold">DoeIT</span>
+        </div>
+        <p class="text-gray-600 mb-4">Sistema de doações com validação por QR Code</p>
+        <p class="text-sm text-gray-500">© 2025 EEEP Maria Célia Pinheiro Falcão. Projeto desenvolvido pelos alunos.</p>
+      </div>
+    </div>
   </footer>
 
-  <!-- Scripts -->
   <script>
-    // Toggle do menu mobile
-    document.getElementById('menu-toggle').addEventListener('click', function () {
-      const menu = document.getElementById('mobile-menu');
-      menu.classList.toggle('hidden');
-    });
+    lucide.createIcons();
 
-    // Toggle de tema claro/escuro
-    const toggle = document.getElementById('theme-toggle');
-    const htmlEl = document.documentElement;
-
-    toggle.addEventListener('click', () => {
-      if (htmlEl.classList.contains('dark')) {
-        htmlEl.classList.remove('dark');
-        localStorage.setItem('theme', 'light');
-      } else {
-        htmlEl.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
+    // Typing effect
+    const text = "Doações com QR Code";
+    const target = document.getElementById("typing-text");
+    let i = 0;
+    function type() {
+      if (i < text.length) {
+        target.textContent += text.charAt(i);
+        i++;
+        setTimeout(type, 100);
       }
-    });
+    }
 
-    // Carregar tema do localStorage
-    if (localStorage.getItem('theme') === 'dark') {
-      htmlEl.classList.add('dark');
-    } else if (localStorage.getItem('theme') === 'light') {
-      htmlEl.classList.remove('dark');
+    window.onload = () => {
+      type();
+      fetchCommits();
+    };
+
+    // GitHub commits fetch
+    async function fetchCommits() {
+      const res = await fetch("https://api.github.com/repos/GuilhermmeDev/doe.it/commits?per_page=10");
+      const data = await res.json();
+      const container = document.getElementById("commits-container");
+
+      data.forEach(commit => {
+        const date = new Date(commit.commit.author.date).toLocaleString('pt-BR');
+        const avatar = commit.author?.avatar_url;
+        const authorName = commit.author?.login || commit.commit.author.name;
+        const message = commit.commit.message;
+        const sha = commit.sha.substring(0, 7);
+
+        const div = document.createElement("div");
+        div.className = "p-4 bg-gray-100 rounded-lg border-l-4 border-blue-500 flex space-x-4 items-start";
+
+        div.innerHTML = `
+          <img src="${avatar || 'https://via.placeholder.com/40'}" alt="avatar" class="w-10 h-10 rounded-full object-cover mt-1" />
+          <div>
+            <p class="font-medium mb-1">${message}</p>
+            <p class="text-gray-500">Autor: ${authorName}</p>
+            <p class="text-gray-500">Data: ${date}</p>
+            <p class="text-gray-400 font-mono">SHA: ${sha}</p>
+          </div>
+        `;
+
+        container.appendChild(div);
+      });
     }
   </script>
 </body>
-
 </html>
