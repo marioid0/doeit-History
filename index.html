@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DoeIT</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
       tailwind.config = {
@@ -29,33 +29,52 @@
       }
     </style>
   </head>
-  <body class="bg-white text-gray-900">
+  <body
+    class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300"
+  >
     <!-- Navbar -->
     <nav
-      class="fixed w-full top-0 z-50 backdrop-blur-md border-b bg-white border-gray-200"
+      class="fixed w-full top-0 z-50 backdrop-blur-md border-b bg-white border-gray-200 dark:bg-gray-950 dark:border-gray-800"
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
           <div class="flex items-center space-x-2">
-            <i data-lucide="qr-code" class="h-8 w-8 text-green-500"></i>
-            <span class="text-xl font-bold">DoeIT</span>
+            <i
+              data-lucide="qr-code"
+              class="h-8 w-8 text-[#2AB036] dark:text-[#FF5800]"
+            ></i>
+            <span class="text-xl font-bold dark:text-white">DoeIT</span>
           </div>
-          <div class="hidden md:flex items-center space-x-8 text-gray-800">
+          <div
+            class="hidden md:flex items-center space-x-8 text-gray-800 dark:text-gray-200"
+          >
             <a
               href="#sobre"
-              class="hover:text-gray-500 transition-colors cursor-pointer"
+              class="hover:text-[#2AB036] dark:hover:text-[#FF5800] transition-colors cursor-pointer"
               >Sobre</a
             >
             <a
               href="#equipe"
-              class="hover:text-gray-500 transition-colors cursor-pointer"
+              class="hover:text-[#2AB036] dark:hover:text-[#FF5800] transition-colors cursor-pointer"
               >Equipe</a
             >
             <a
               href="#faq"
-              class="hover:text-gray-500 transition-colors cursor-pointer"
+              class="hover:text-[#2AB036] dark:hover:text-[#FF5800] transition-colors cursor-pointer"
               >FAQ</a
             >
+            <!-- Botão de alternância de tema -->
+            <button
+              id="theme-toggle"
+              class="ml-4 p-2 rounded-full border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              aria-label="Alternar tema"
+            >
+              <i
+                id="theme-icon"
+                data-lucide="moon"
+                class="h-6 w-6 text-[#2AB036] dark:text-[#FF5800]"
+              ></i>
+            </button>
           </div>
         </div>
       </div>
@@ -65,19 +84,21 @@
     <section class="pt-24 pb-20 px-4 sm:px-6 lg:px-8">
       <div class="max-w-7xl mx-auto text-center">
         <div
-          class="inline-flex items-center space-x-2 bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium mb-8"
+          class="inline-flex items-center space-x-2 bg-[#E6F9ED] dark:bg-[#232323] text-[#2AB036] dark:text-[#FF5800] px-4 py-2 rounded-full text-sm font-medium mb-8"
         >
           <i data-lucide="shield" class="h-4 w-4"></i>
           <span>Sistema de Doação Seguro</span>
         </div>
         <h1 class="text-4xl md:text-6xl font-bold mb-6">
           <span
-            class="bg-gradient-to-r from-green-500 to-orange-500 bg-clip-text text-transparent"
+            class="bg-gradient-to-r from-[#2AB036] to-[#FF5800] bg-clip-text text-transparent"
             >DoeIT</span
           ><br />
           <span id="typing-text" class="typing"></span>
         </h1>
-        <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+        <p
+          class="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto"
+        >
           Sistema inovador de doações com validação por QR Code, desenvolvido em
           Laravel pelos alunos da EEEP Maria Célia Pinheiro Falcão.
           Transparência e segurança em cada doação.
@@ -88,14 +109,14 @@
           <a
             href="https://github.com/GuilhermmeDev/doe.it"
             target="_blank"
-            class="inline-flex items-center space-x-2 bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-lg font-medium transition-colors"
+            class="inline-flex items-center space-x-2 bg-[#2AB036] hover:bg-[#FF5800] text-white px-8 py-3 rounded-lg font-medium transition-colors"
           >
             <i data-lucide="github" class="h-5 w-5"></i>
             <span>Ver no GitHub</span>
           </a>
           <button
             onclick="document.getElementById('commits').scrollIntoView({behavior: 'smooth'})"
-            class="inline-flex items-center space-x-2 border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-white px-8 py-3 rounded-lg font-medium transition-colors"
+            class="inline-flex items-center space-x-2 border-2 border-[#2AB036] text-[#2AB036] hover:bg-[#FF5800] hover:text-white dark:border-[#FF5800] dark:text-[#FF5800] dark:hover:bg-[#2AB036] dark:hover:text-white px-8 py-3 rounded-lg font-medium transition-colors"
           >
             <i data-lucide="git-commit" class="h-5 w-5"></i>
             <span>Ver Commits</span>
@@ -105,36 +126,53 @@
     </section>
 
     <!-- Sobre Section -->
-    <section id="sobre" class="py-20 bg-gray-50">
+    <section id="sobre" class="py-20 bg-gray-50 dark:bg-gray-900">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4">Sobre o Projeto</h2>
-          <p class="text-xl text-gray-600">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
+            Sobre o Projeto
+          </h2>
+          <p class="text-xl text-gray-600 dark:text-gray-300">
             Inovação em doações com tecnologia Laravel
           </p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-8">
-          <div class="p-8 rounded-xl bg-white shadow-lg">
-            <i data-lucide="qr-code" class="h-12 w-12 text-green-500 mb-4"></i>
-            <h3 class="text-xl font-bold mb-4">Validação QR Code</h3>
-            <p class="text-gray-600">
+          <div class="p-8 rounded-xl bg-white dark:bg-gray-800 shadow-lg">
+            <i
+              data-lucide="qr-code"
+              class="h-12 w-12 text-[#2AB036] dark:text-[#FF5800] mb-4"
+            ></i>
+            <h3 class="text-xl font-bold mb-4 dark:text-white">
+              Validação QR Code
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300">
               Cada doação gera um QR Code único para validação e rastreamento,
               garantindo transparência total no processo.
             </p>
           </div>
-          <div class="p-8 rounded-xl bg-white shadow-lg">
-            <i data-lucide="heart" class="h-12 w-12 text-red-500 mb-4"></i>
-            <h3 class="text-xl font-bold mb-4">Facilidade de Uso</h3>
-            <p class="text-gray-600">
+          <div class="p-8 rounded-xl bg-white dark:bg-gray-800 shadow-lg">
+            <i
+              data-lucide="heart"
+              class="h-12 w-12 text-[#FF5800] dark:text-[#2AB036] mb-4"
+            ></i>
+            <h3 class="text-xl font-bold mb-4 dark:text-white">
+              Facilidade de Uso
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300">
               Interface intuitiva e processo simplificado para facilitar doações
               e aumentar o engajamento.
             </p>
           </div>
-          <div class="p-8 rounded-xl bg-white shadow-lg">
-            <i data-lucide="shield" class="h-12 w-12 text-green-500 mb-4"></i>
-            <h3 class="text-xl font-bold mb-4">Segurança Laravel</h3>
-            <p class="text-gray-600">
+          <div class="p-8 rounded-xl bg-white dark:bg-gray-800 shadow-lg">
+            <i
+              data-lucide="shield"
+              class="h-12 w-12 text-[#2AB036] dark:text-[#FF5800] mb-4"
+            ></i>
+            <h3 class="text-xl font-bold mb-4 dark:text-white">
+              Segurança Laravel
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300">
               Desenvolvido com Laravel, garantindo robustez, segurança e
               escalabilidade para o sistema.
             </p>
@@ -144,36 +182,42 @@
     </section>
 
     <!-- Equipe Section -->
-    <section id="equipe" class="py-20">
+    <section id="equipe" class="py-20 bg-white dark:bg-gray-900">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4">Nossa Equipe</h2>
-          <p class="text-xl text-gray-600">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
+            Nossa Equipe
+          </h2>
+          <p class="text-xl text-gray-600 dark:text-gray-300">
             Desenvolvido pelos talentosos alunos da EEEP Maria Célia Pinheiro
             Falcão
           </p>
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="text-center p-8 rounded-xl bg-gray-50">
+          <div class="text-center p-8 rounded-xl bg-gray-50 dark:bg-gray-800">
             <div
-              class="w-20 h-20 bg-gradient-to-r from-green-500 to-orange-600 rounded-full mx-auto mb-4 flex items-center justify-center"
+              class="w-20 h-20 bg-gradient-to-r from-[#2AB036] to-[#FF5800] rounded-full mx-auto mb-4 flex items-center justify-center"
             >
               <i data-lucide="users" class="h-10 w-10 text-white"></i>
             </div>
-            <h3 class="text-xl font-bold mb-2">Equipe EEEP</h3>
-            <p class="text-green-500 font-medium mb-3">Desenvolvedores</p>
-            <p class="text-gray-600">
+            <h3 class="text-xl font-bold mb-2 dark:text-white">Equipe EEEP</h3>
+            <p class="text-[#2AB036] dark:text-[#FF5800] font-medium mb-3">
+              Desenvolvedores
+            </p>
+            <p class="text-gray-600 dark:text-gray-300">
               Alunos dedicados da EEEP Maria Célia Pinheiro Falcão
             </p>
           </div>
         </div>
 
-        <div class="mt-12 p-8 rounded-xl bg-gray-50 text-center">
-          <h3 class="text-2xl font-bold mb-4">
+        <div
+          class="mt-12 p-8 rounded-xl bg-gray-50 dark:bg-gray-800 text-center"
+        >
+          <h3 class="text-2xl font-bold mb-4 dark:text-white">
             EEEP Maria Célia Pinheiro Falcão
           </h3>
-          <p class="text-gray-600 max-w-3xl mx-auto">
+          <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Escola Estadual de Educação Profissional que forma jovens talentos
             em tecnologia. O projeto DoeIT representa o comprometimento da
             instituição com a inovação e responsabilidade social.
@@ -183,13 +227,15 @@
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="py-20 bg-gray-50">
+    <section id="faq" class="py-20 bg-gray-50 dark:bg-gray-900">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
             Perguntas Frequentes
           </h2>
-          <p class="text-xl text-gray-600">Tire suas dúvidas sobre o DoeIT</p>
+          <p class="text-xl text-gray-600 dark:text-gray-300">
+            Tire suas dúvidas sobre o DoeIT
+          </p>
         </div>
 
         <div id="faq-container" class="space-y-4">
@@ -199,13 +245,13 @@
     </section>
 
     <!-- Commits Section -->
-    <section id="commits" class="py-20">
+    <section id="commits" class="py-20 bg-white dark:bg-gray-900">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
             Histórico de Desenvolvimento
           </h2>
-          <p class="text-xl text-gray-600">
+          <p class="text-xl text-gray-600 dark:text-gray-300">
             Acompanhe os últimos commits do projeto
           </p>
         </div>
@@ -213,14 +259,14 @@
         <div id="pagination" class="flex justify-center mt-8">
           <button
             id="prev-button"
-            class="bg-green-500 text-white px-4 py-2 rounded-lg mr-2 cursor-pointer"
+            class="bg-[#2AB036] dark:bg-[#FF5800] text-white px-4 py-2 rounded-lg mr-2 cursor-pointer"
             disabled
           >
             Anterior
           </button>
           <button
             id="next-button"
-            class="bg-green-500 text-white px-4 py-2 rounded-lg cursor-pointer"
+            class="bg-[#2AB036] dark:bg-[#FF5800] text-white px-4 py-2 rounded-lg cursor-pointer"
           >
             Próximo
           </button>
@@ -229,17 +275,22 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 border-t bg-white border-gray-200">
+    <footer
+      class="py-12 border-t bg-white border-gray-200 dark:bg-gray-950 dark:border-gray-800"
+    >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
           <div class="flex items-center justify-center space-x-2 mb-4">
-            <i data-lucide="qr-code" class="h-8 w-8 text-green-500"></i>
-            <span class="text-2xl font-bold">DoeIT</span>
+            <i
+              data-lucide="qr-code"
+              class="h-8 w-8 text-[#2AB036] dark:text-[#FF5800]"
+            ></i>
+            <span class="text-2xl font-bold dark:text-white">DoeIT</span>
           </div>
-          <p class="text-gray-600 mb-4">
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
             Sistema de doações com validação por QR Code
           </p>
-          <p class="text-sm text-gray-500">
+          <p class="text-sm text-gray-500 dark:text-gray-400">
             © 2025 EEEP Maria Célia Pinheiro Falcão. Projeto desenvolvido pelos
             alunos.
           </p>

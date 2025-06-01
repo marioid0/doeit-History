@@ -32,7 +32,7 @@ async function fetchCommits() {
 
     const div = document.createElement("div");
     div.className =
-      "p-4 bg-gray-100 rounded-lg border-l-4 border-orange-500 flex space-x-4 items-start";
+      "p-4 bg-gray-100 rounded-lg border-l-4 border-orange-500 flex space-x-4 items-start dark:bg-gray-800";
 
     div.innerHTML = `
       <img src="${
@@ -68,6 +68,38 @@ document.getElementById("prev-button").addEventListener("click", () => {
 document.getElementById("next-button").addEventListener("click", () => {
   currentPage++;
   fetchCommits();
+});
+
+// Alternância de tema claro/escuro
+const themeToggle = document.getElementById("theme-toggle");
+const themeIcon = document.getElementById("theme-icon");
+const html = document.documentElement;
+
+function setTheme(mode) {
+  if (mode === "dark") {
+    html.classList.add("dark");
+    themeIcon.setAttribute("data-lucide", "sun");
+    themeIcon.classList.remove("text-[#FF5800]");
+    themeIcon.classList.add("text-[#2AB036]");
+  } else {
+    html.classList.remove("dark");
+    themeIcon.setAttribute("data-lucide", "moon");
+    themeIcon.classList.remove("text-[#2AB036]");
+    themeIcon.classList.add("text-[#FF5800]");
+  }
+  lucide.createIcons();
+  localStorage.setItem("theme", mode);
+}
+
+themeToggle?.addEventListener("click", () => {
+  const isDark = html.classList.contains("dark");
+  setTheme(isDark ? "light" : "dark");
+});
+
+// Inicialização do tema ao carregar
+window.addEventListener("DOMContentLoaded", () => {
+  const saved = localStorage.getItem("theme");
+  setTheme(saved === "dark" ? "dark" : "light");
 });
 
 window.onload = () => {
