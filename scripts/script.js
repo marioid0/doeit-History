@@ -32,7 +32,7 @@ async function fetchCommits() {
 
     const div = document.createElement("div");
     div.className =
-      "p-4 bg-gray-100 rounded-lg border-l-4 border-blue-500 flex space-x-4 items-start";
+      "p-4 bg-gray-100 rounded-lg border-l-4 border-orange-500 flex space-x-4 items-start";
 
     div.innerHTML = `
       <img src="${
