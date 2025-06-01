@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DoeIT</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+      .typing::after {
+        content: "|";
+        animation: blink 1s step-end infinite;
+      }
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+    </style>
+    <style>
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 64px; /* evita que o conteúdo fique escondido atrás da navbar */
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-900">
+    <!-- Navbar -->
+    <nav
+      class="fixed w-full top-0 z-50 backdrop-blur-md border-b bg-white border-gray-200"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center space-x-2">
+            <i data-lucide="qr-code" class="h-8 w-8 text-blue-500"></i>
+            <span class="text-xl font-bold">DoeIT</span>
+          </div>
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="#sobre"
+              class="hover:text-blue-500 transition-colors cursor-pointer"
+              >Sobre</a
+            >
+            <a
+              href="#equipe"
+              class="hover:text-blue-500 transition-colors cursor-pointer"
+              >Equipe</a
+            >
+            <a
+              href="#faq"
+              class="hover:text-blue-500 transition-colors cursor-pointer"
+              >FAQ</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-20 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto text-center">
+        <div
+          class="inline-flex items-center space-x-2 bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-8"
+        >
+          <i data-lucide="shield" class="h-4 w-4"></i>
+          <span>Sistema de Doação Seguro</span>
+        </div>
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">
+          <span
+            class="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent"
+            >DoeIT</span
+          ><br />
+          <span id="typing-text" class="typing"></span>
+        </h1>
+        <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+          Sistema inovador de doações com validação por QR Code, desenvolvido em
+          Laravel pelos alunos da EEEP Maria Célia Pinheiro Falcão.
+          Transparência e segurança em cada doação.
+        </p>
+        <div
+          class="flex flex-col sm:flex-row gap-4 justify-center items-center"
+        >
+          <a
+            href="https://github.com/GuilhermmeDev/doe.it"
+            target="_blank"
+            class="inline-flex items-center space-x-2 bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-medium transition-colors"
+          >
+            <i data-lucide="github" class="h-5 w-5"></i>
+            <span>Ver no GitHub</span>
+          </a>
+          <button
+            onclick="document.getElementById('commits').scrollIntoView({behavior: 'smooth'})"
+            class="inline-flex items-center space-x-2 border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white px-8 py-3 rounded-lg font-medium transition-colors"
+          >
+            <i data-lucide="git-commit" class="h-5 w-5"></i>
+            <span>Ver Commits</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section id="sobre" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Sobre o Projeto</h2>
+          <p class="text-xl text-gray-600">
+            Inovação em doações com tecnologia Laravel
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="p-8 rounded-xl bg-white shadow-lg">
+            <i data-lucide="qr-code" class="h-12 w-12 text-blue-500 mb-4"></i>
+            <h3 class="text-xl font-bold mb-4">Validação QR Code</h3>
+            <p class="text-gray-600">
+              Cada doação gera um QR Code único para validação e rastreamento,
+              garantindo transparência total no processo.
+            </p>
+          </div>
+          <div class="p-8 rounded-xl bg-white shadow-lg">
+            <i data-lucide="heart" class="h-12 w-12 text-red-500 mb-4"></i>
+            <h3 class="text-xl font-bold mb-4">Facilidade de Uso</h3>
+            <p class="text-gray-600">
+              Interface intuitiva e processo simplificado para facilitar doações
+              e aumentar o engajamento.
+            </p>
+          </div>
+          <div class="p-8 rounded-xl bg-white shadow-lg">
+            <i data-lucide="shield" class="h-12 w-12 text-green-500 mb-4"></i>
+            <h3 class="text-xl font-bold mb-4">Segurança Laravel</h3>
+            <p class="text-gray-600">
+              Desenvolvido com Laravel, garantindo robustez, segurança e
+              escalabilidade para o sistema.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Equipe Section -->
+    <section id="equipe" class="py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Nossa Equipe</h2>
+          <p class="text-xl text-gray-600">
+            Desenvolvido pelos talentosos alunos da EEEP Maria Célia Pinheiro
+            Falcão
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="text-center p-8 rounded-xl bg-gray-50">
+            <div
+              class="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mx-auto mb-4 flex items-center justify-center"
+            >
+              <i data-lucide="users" class="h-10 w-10 text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Equipe EEEP</h3>
+            <p class="text-blue-500 font-medium mb-3">Desenvolvedores</p>
+            <p class="text-gray-600">
+              Alunos dedicados da EEEP Maria Célia Pinheiro Falcão
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12 p-8 rounded-xl bg-gray-50 text-center">
+          <h3 class="text-2xl font-bold mb-4">
+            EEEP Maria Célia Pinheiro Falcão
+          </h3>
+          <p class="text-gray-600 max-w-3xl mx-auto">
+            Escola Estadual de Educação Profissional que forma jovens talentos
+            em tecnologia. O projeto DoeIT representa o comprometimento da
+            instituição com a inovação e responsabilidade social.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-gray-50">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Perguntas Frequentes
+          </h2>
+          <p class="text-xl text-gray-600">Tire suas dúvidas sobre o DoeIT</p>
+        </div>
+
+        <div id="faq-container" class="space-y-4">
+          <!-- Itens inseridos pelo JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Commits Section -->
+    <section id="commits" class="py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Histórico de Desenvolvimento
+          </h2>
+          <p class="text-xl text-gray-600">
+            Acompanhe os últimos commits do projeto
+          </p>
+        </div>
+        <div id="commits-container" class="space-y-4 text-sm text-left"></div>
+        <div id="pagination" class="flex justify-center mt-8">
+          <button
+            id="prev-button"
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg mr-2"
+            disabled
+          >
+            Anterior
+          </button>
+          <button
+            id="next-button"
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg"
+          >
+            Próximo
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t bg-white border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <div class="flex items-center justify-center space-x-2 mb-4">
+            <i data-lucide="qr-code" class="h-8 w-8 text-blue-500"></i>
+            <span class="text-2xl font-bold">DoeIT</span>
+          </div>
+          <p class="text-gray-600 mb-4">
+            Sistema de doações com validação por QR Code
+          </p>
+          <p class="text-sm text-gray-500">
+            © 2025 EEEP Maria Célia Pinheiro Falcão. Projeto desenvolvido pelos
+            alunos.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="scripts/script.js"></script>
+  </body>
+</html>
