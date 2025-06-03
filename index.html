@@ -9,6 +9,17 @@
     <script>
       tailwind.config = {
         darkMode: "class",
+        theme: {
+                extend: {
+                    colors: {
+                        verde: '#2AB036',
+                        laranja: '#FF5800',
+                        cinza: '#1F2937',
+                        branco: '#E0E0E0',
+                        preto: '#1E1E20',
+                    }
+                }
+            }
       };
     </script>
     <style>
@@ -201,48 +212,1195 @@
  
     <!-- Equipe Section -->
     <section id="equipe" class="py-20 bg-white dark:bg-gray-900">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-            Nossa Equipe
-          </h2>
-          <p class="text-xl text-gray-600 dark:text-gray-300">
-            Desenvolvido pelos talentosos alunos da EEEP Maria Célia Pinheiro
-            Falcão
-          </p>
+        <div class="container mx-auto px-4 py-12">
+        <!-- Botão de alternar dark mode -->
+        <div class="flex justify-end mb-8">
+            <button id="theme-toggle" class="p-2 rounded-full bg-white dark:bg-cinza shadow-md">
+                <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                </svg>
+                <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+                </svg>
+            </button>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="text-center p-8 rounded-xl bg-gray-50 dark:bg-gray-800">
-            <div
-              class="w-20 h-20 bg-gradient-to-r from-[#2AB036] to-[#FF5800] rounded-full mx-auto mb-4 flex items-center justify-center"
-            >
-              <i data-lucide="users" class="h-10 w-10 text-white"></i>
+        <!-- Equipe de Desenvolvimento -->
+        <section class="mb-16">
+            <h1 class="text-3xl font-bold text-center mb-12 relative after:content-[''] after:block after:w-20 after:h-1 after:bg-verde after:mx-auto after:mt-4 after:rounded-full dark:after:bg-laranja">
+                Nossa Equipe de Desenvolvimento
+            </h1>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-verde to-laranja p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-verde dark:text-laranja">GM</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                Guilherme Morais
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-verde dark:bg-laranja transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Scrum dos desenvolvedores</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://github.com/GuilhermmeDev" class="text-gray-500 hover:text-verde dark:hover:text-laranja transition-colors">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-laranja to-verde p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-laranja dark:text-verde">AM</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                Antonio Mateus
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-laranja dark:bg-verde transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Líder da Prototipagem</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://github.com/mteuslima" class="text-gray-500 hover:text-laranja dark:hover:text-verde transition-colors">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-verde to-laranja p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-verde dark:text-laranja">JC</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                Julio Cesar
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-verde dark:bg-laranja transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Prototipagem</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://github.com/jull7os" class="text-gray-500 hover:text-verde dark:hover:text-laranja transition-colors">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-laranja to-verde p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-laranja dark:text-verde">GK</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                Gianne Karine
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-laranja dark:bg-verde transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Prototipagem</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://github.com/giannevidal" class="text-gray-500 hover:text-laranja dark:hover:text-verde transition-colors">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-verde to-laranja p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-verde dark:text-laranja">FA</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                Francisco de Assis
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-verde dark:bg-laranja transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Prototipagem</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://github.com/junior517" class="text-gray-500 hover:text-verde dark:hover:text-laranja transition-colors">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-laranja to-verde p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-laranja dark:text-verde">FK</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                Francisco Kauan
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-laranja dark:bg-verde transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Prototipagem</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://github.com/kauansiii" class="text-gray-500 hover:text-laranja dark:hover:text-verde transition-colors">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-verde to-laranja p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-verde dark:text-laranja">WA</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                Willian Alves
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-verde dark:bg-laranja transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Líder do Front-End</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://github.com/willzky23" class="text-gray-500 hover:text-verde dark:hover:text-laranja transition-colors">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-laranja to-verde p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-laranja dark:text-verde">DE</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                Daniel Eduardo
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-laranja dark:bg-verde transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Front-End</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://github.com/daneo12" class="text-gray-500 hover:text-laranja dark:hover:text-verde transition-colors">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 9 -->
+                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-verde to-laranja p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-verde dark:text-laranja">AG</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                Antonio Gustavo
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-verde dark:bg-laranja transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Front-End</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://github.com/gustatxk" class="text-gray-500 hover:text-verde dark:hover:text-laranja transition-colors">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 10 -->
+                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-laranja to-verde p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-laranja dark:text-verde">AV</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                André Luis
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-laranja dark:bg-verde transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Front-End</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://github.com/andrefrx14" class="text-gray-500 hover:text-laranja dark:hover:text-verde transition-colors">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 11 -->
+                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-verde to-laranja p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-verde dark:text-laranja">DS</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                Davi Salustiano
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-verde dark:bg-laranja transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Front-End</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://github.com/davisalu-gb" class="text-gray-500 hover:text-verde dark:hover:text-laranja transition-colors">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 12 -->
+                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-laranja to-verde p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-laranja dark:text-verde">PG</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                Pedro Gustavo
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-laranja dark:bg-verde transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Líder do Back-End</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://github.com/Gustavo7327" class="text-gray-500 hover:text-laranja dark:hover:text-verde transition-colors">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 13 -->
+                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-laranja to-verde p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-laranja dark:text-verde">MN</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                Maria Eduarda
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-laranja dark:bg-verde transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Back-End</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://github.com/Eduarrda7444" class="text-gray-500 hover:text-laranja dark:hover:text-verde transition-colors">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 14 -->
+                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-verde to-laranja p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-verde dark:text-laranja">MD</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                Mario Desidério
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-verde dark:bg-laranja transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Back-End</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://github.com/marioid0" class="text-gray-500 hover:text-verde dark:hover:text-laranja transition-colors">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <h3 class="text-xl font-bold mb-2 dark:text-white">Equipe EEEP</h3>
-            <p class="text-[#2AB036] dark:text-[#FF5800] font-medium mb-3">
-              Desenvolvedores
-            </p>
-            <p class="text-gray-600 dark:text-gray-300">
-              Alunos dedicados da EEEP Maria Célia Pinheiro Falcão
-            </p>
-          </div>
+        </section>
+
+        <!-- Equipe da Escrita -->
+        <section>
+            <h1 class="text-3xl font-bold text-center mb-12 relative after:content-[''] after:block after:w-20 after:h-1 after:bg-verde after:mx-auto after:mt-4 after:rounded-full dark:after:bg-laranja">
+                Nossa Equipe da Escrita
+            </h1>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-verde to-laranja p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-verde dark:text-laranja">MD</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                Maria da Glória
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-verde dark:bg-laranja transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Líder da escrita</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://github.com/GloriaDiogenes" class="text-gray-500 hover:text-verde dark:hover:text-laranja transition-colors">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-laranja to-verde p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-laranja dark:text-verde">AL</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                Allicia Layla
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-laranja dark:bg-verde transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Escrita</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://github.com/alliciaqueiroz" class="text-gray-500 hover:text-laranja dark:hover:text-verde transition-colors">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-verde to-laranja p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-verde dark:text-laranja">AG</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                Ana Grazielly
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-verde dark:bg-laranja transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Escrita</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-verde dark:hover:text-laranja transition-colors">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-laranja to-verde p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-laranja dark:text-verde">FA</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                Francisco Alyson
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-laranja dark:bg-verde transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Escrita</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-laranja dark:hover:text-verde transition-colors">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-verde to-laranja p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-verde dark:text-laranja">JA</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                Joyce Aparecida
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-verde dark:bg-laranja transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Escrita</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-verde dark:hover:text-laranja transition-colors">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-laranja to-verde p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-laranja dark:text-verde">IC</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                Isabelle Carlos
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-laranja dark:bg-verde transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Escrita</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-laranja dark:hover:text-verde transition-colors">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-verde to-laranja p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-verde dark:text-laranja">GN</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                Gabriella Nogueira
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-verde dark:bg-laranja transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Escrita</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-verde dark:hover:text-laranja transition-colors">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-laranja to-verde p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-laranja dark:text-verde">MA</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                Murilo Alves
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-laranja dark:bg-verde transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Escrita</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://github.com/Muril08" class="text-gray-500 hover:text-laranja dark:hover:text-verde transition-colors">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 9 -->
+                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-laranja to-verde p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-laranja dark:text-verde">EV</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                Emilly Vitória
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-laranja dark:bg-verde transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Escrita</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://github.com/emillyfernb" class="text-gray-500 hover:text-laranja dark:hover:text-verde transition-colors">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+       <div class="container mx-auto px-4 py-12">
+        <!-- Botão de alternar dark mode -->
+        <div class="flex justify-end mb-8">
+            <button id="theme-toggle" class="p-2 rounded-full bg-white dark:bg-cinza shadow-md">
+                <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                </svg>
+                <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+                </svg>
+            </button>
         </div>
 
-        <div
-          class="mt-12 p-8 rounded-xl bg-gray-50 dark:bg-gray-800 text-center"
-        >
-          <h3 class="text-2xl font-bold mb-4 dark:text-white">
-            EEEP Maria Célia Pinheiro Falcão
-          </h3>
-          <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Escola Estadual de Educação Profissional que forma jovens talentos
-            em tecnologia. O projeto DoeIT representa o comprometimento da
-            instituição com a inovação e responsabilidade social.
-          </p>
-        </div>
-      </div>
+        <!-- Equipe de Comunicação -->
+        <section class="mb-16">
+            <h1 class="text-3xl font-bold text-center mb-12 relative after:content-[''] after:block after:w-20 after:h-1 after:bg-verde after:mx-auto after:mt-4 after:rounded-full dark:after:bg-laranja">
+                Nossa Equipe de Comunicação
+            </h1>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-verde to-laranja p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-verde dark:text-laranja">AR</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                Anahellen Rakelly
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-verde dark:bg-laranja transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Líder da Comunicação</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://github.com/AnahellenOliveira" class="mx-2 text-gray-500 hover:text-verde dark:hover:text-laranja transition-colors" aria-label="Github">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-laranja to-verde p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-laranja dark:text-verde">MB</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                Maria Bianca
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-laranja dark:bg-verde transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Comunicação</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="mx-2 text-gray-500 hover:text-laranja dark:hover:text-verde transition-colors" aria-label="Github">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-verde to-laranja p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-verde dark:text-laranja">MB</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                Maria Beatriz
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-verde dark:bg-laranja transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Comunicação</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="mx-2 text-gray-500 hover:text-verde dark:hover:text-laranja transition-colors" aria-label="Github">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-laranja to-verde p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-laranja dark:text-verde">PL</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                Pedro Lucas
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-laranja dark:bg-verde transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Comunicação</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://github.com/PedroLucasFernandes24" class="mx-2 text-gray-500 hover:text-laranja dark:hover:text-verde transition-colors" aria-label="Github">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-verde to-laranja p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-verde dark:text-laranja">EI</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                Emilly Izabelly
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-verde dark:bg-laranja transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Comunicação</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://github.com/izabely762" class="mx-2 text-gray-500 hover:text-verde dark:hover:text-laranja transition-colors" aria-label="Github">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-laranja to-verde p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-laranja dark:text-verde">EL</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                Eduarda Lopes
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-laranja dark:bg-verde transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Comunicação</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://github.com/lopesz1" class="mx-2 text-gray-500 hover:text-laranja dark:hover:text-verde transition-colors" aria-label="Github">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-verde to-laranja p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-verde dark:text-laranja">JB</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                Jamilly Barbosa
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-verde dark:bg-laranja transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Comunicação</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://github.com/jamillymarqs" class="mx-2 text-gray-500 hover:text-verde dark:hover:text-laranja transition-colors" aria-label="Github">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-laranja to-verde p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-laranja dark:text-verde">JC</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                Jammily Carla
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-laranja dark:bg-verde transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Comunicação</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://github.com/JammilyRegoDev" class="mx-2 text-gray-500 hover:text-laranja dark:hover:text-verde transition-colors" aria-label="Github">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Equipe de Parcerias -->
+        <section>
+            <h1 class="text-3xl font-bold text-center mb-12 relative after:content-[''] after:block after:w-20 after:h-1 after:bg-verde after:mx-auto after:mt-4 after:rounded-full dark:after:bg-laranja">
+                Nossa Equipe de Parcerias
+            </h1>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-verde to-laranja p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-verde dark:text-laranja">RD</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                Rafael Diogenes
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-verde dark:bg-laranja transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Líder de Parcerias</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://github.com/RafaelDevLord" class="mx-2 text-gray-500 hover:text-verde dark:hover:text-laranja transition-colors" aria-label="Github">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-laranja to-verde p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-laranja dark:text-verde">AS</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                Andre Luiz Silva
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-laranja dark:bg-verde transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Parcerias</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="mx-2 text-gray-500 hover:text-laranja dark:hover:text-verde transition-colors" aria-label="Github">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-verde to-laranja p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-verde dark:text-laranja">EM</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                Erick Maycon
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-verde dark:bg-laranja transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Parcerias</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="mx-2 text-gray-500 hover:text-verde dark:hover:text-laranja transition-colors" aria-label="Github">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-laranja to-verde p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-laranja dark:text-verde">KR</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                Kaua Rodrigues
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-laranja dark:bg-verde transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Parcerias</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="mx-2 text-gray-500 hover:text-laranja dark:hover:text-verde transition-colors" aria-label="Github">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-verde to-laranja p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-verde dark:text-laranja">GA</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                Gabriel Andrade
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-verde dark:bg-laranja transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Parcerias</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://github.com/GabrieMartinsDev" class="mx-2 text-gray-500 hover:text-verde dark:hover:text-laranja transition-colors" aria-label="Github">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-laranja to-verde p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-laranja dark:text-verde">WL</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                Washington Luciano
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-laranja dark:bg-verde transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Parcerias</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://github.com/uostoo" class="mx-2 text-gray-500 hover:text-laranja dark:hover:text-verde transition-colors" aria-label="Github">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-laranja to-verde p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-laranja dark:text-verde">JI</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                José Ítalo
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-laranja dark:bg-verde transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Parcerias</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="mx-2 text-gray-500 hover:text-laranja dark:hover:text-verde transition-colors" aria-label="Github">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-laranja to-verde p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-laranja dark:text-verde">NR</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                Nicollas Ryan
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-laranja dark:bg-verde transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Parcerias</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="mx-2 text-gray-500 hover:text-laranja dark:hover:text-verde transition-colors" aria-label="Github">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-laranja to-verde p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-laranja dark:text-verde">LD</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                Luiz Diogo
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-laranja dark:bg-verde transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Parcerias</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="mx-2 text-gray-500 hover:text-laranja dark:hover:text-verde transition-colors" aria-label="Github">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-laranja to-verde p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-laranja dark:text-verde">VC</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                Vinicius Chaves
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-laranja dark:bg-verde transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Parcerias</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="mx-2 text-gray-500 hover:text-laranja dark:hover:text-verde transition-colors" aria-label="Github">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                                                <div class="bg-white dark:bg-cinza rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2">
+                    <div class="text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-laranja to-verde p-1 mx-auto">
+                                <div class="w-full h-full rounded-full bg-white dark:bg-cinza flex items-center justify-center overflow-hidden">
+                                    <span class="text-3xl font-bold text-laranja dark:text-verde">PI</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1 relative inline-block">
+                            <span class="relative group">
+                                Pedro Italo
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-laranja dark:bg-verde transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-branco mb-4">Parcerias</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://github.com/pedroitalofeitosa" class="mx-2 text-gray-500 hover:text-laranja dark:hover:text-verde transition-colors" aria-label="Github">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+        
     </section>
+    </div>
+    </section>
+    
 
     <!-- FAQ Section -->
     <section id="faq" class="py-20 bg-gray-50 dark:bg-gray-900">
