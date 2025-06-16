@@ -1,0 +1,67 @@
+
+      .typing::after {
+        content: "|";
+        animation: blink 1s step-end infinite;
+      }
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+
+  .typing::after {
+    content: "|";
+    animation: blink 1s step-end infinite;
+  }
+
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 64px; /* Evita que o conteúdo fique escondido atrás da navbar */
+  }
+
+  .diferenciais-titulo {
+    margin-bottom: 3rem;
+    color: #000000; /* Cor do título no modo claro */
+  }
+
+  .diferencial-card {
+    color: #333333; /* Cor do texto no modo claro */
+    background-color: #ffffff; /* Fundo branco no modo claro */
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border-top: 4px solid #2AB036; /* Cor do topo do card */
+  }
+
+  /* Estilos para o modo escuro */
+  .dark .diferencial-card {
+    color: #ffffff; /* Cor do texto no modo escuro (mais clara) */
+    background-color: #1f2937; /* Fundo escuro no modo escuro */
+    border-top: 4px solid #4CAF50; /* Cor de topo mais clara no modo escuro */
+  }
+
+  .diferencial-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  .first-section {
+    padding-top: 20px;
+  }
+
+  .diferenciais-titulo {
+  margin-bottom: 3rem;
+  color: #000000; /* Cor padrão no modo claro */
+}
+
+/* Cor no modo escuro */
+.dark .diferenciais-titulo {
+  color: #ffffff; /* Cor branca no modo escuro */
+}
