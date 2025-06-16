@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DoeIT</title>
+    <script src="style.css"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
@@ -22,192 +23,126 @@
             }
       };
     </script>
-    <style>
-      .typing::after {
-        content: "|";
-        animation: blink 1s step-end infinite;
-      }
-      @keyframes blink {
-        50% {
-          opacity: 0;
-        }
-      }
-    </style>
-    <style>
-  .typing::after {
-    content: "|";
-    animation: blink 1s step-end infinite;
-  }
 
-  @keyframes blink {
-    50% {
-      opacity: 0;
-    }
-  }
+<body>
+    <header>
+        <nav class="fixed w-full top-0 z-50 backdrop-blur-md border-b bg-white border-gray-200 dark:bg-gray-950 dark:border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-16">
+                    <div class="flex items-center space-x-2">
+                        <i data-lucide="qr-code" class="h-8 w-8 text-[#2AB036] dark:text-[#FF5800]"></i>
+                        <span class="text-xl font-bold dark:text-white">DoeIT</span>
+                    </div>
+                    <div class="hidden md:flex items-center space-x-8 text-gray-800 dark:text-gray-200">
+                        <a href="#sobre" class="hover:text-[#2AB036] dark:hover:text-[#FF5800] transition-colors cursor-pointer">Sobre</a>
+                        <a href="#equipe" class="hover:text-[#2AB036] dark:hover:text-[#FF5800] transition-colors cursor-pointer">Equipe</a>
+                        <a href="#faq" class="hover:text-[#2AB036] dark:hover:text-[#FF5800] transition-colors cursor-pointer">FAQ</a>
+                        <!-- Botão de alternância de tema -->
+                        <button id="theme-toggle" class="ml-4 p-2 rounded-full border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Alternar tema">
+                            <i id="theme-icon" data-lucide="moon" class="h-6 w-6 text-[#2AB036] dark:text-[#FF5800]"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-  html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 64px; /* Evita que o conteúdo fique escondido atrás da navbar */
-  }
+        <!-- Hero Section -->
+        <section class="pt-24 pb-20 px-4 sm:px-6 lg:px-8" aria-labelledby="hero-heading">
+            <div class="max-w-7xl mx-auto text-center">
+                <div class="inline-flex items-center space-x-2 bg-[#E6F9ED] dark:bg-[#232323] text-[#2AB036] dark:text-[#FF5800] px-4 py-2 rounded-full text-sm font-medium mb-8">
+                    <i data-lucide="shield" class="h-4 w-4"></i>
+                    <span>Sistema de Doação Seguro</span>
+                </div>
+                <h1 id="hero-heading" class="text-4xl md:text-6xl font-bold mb-6">
+                    <span class="bg-gradient-to-r from-[#2AB036] to-[#FF5800] bg-clip-text text-transparent">DoeIT</span><br />
+                    <span id="typing-text" class="typing"></span>
+                </h1>
+                <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
+                    Sistema inovador de doações com validação por QR Code, desenvolvido em Laravel pelos alunos da EEEP Maria Célia Pinheiro Falcão.
+                    Transparência e segurança em cada doação.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="https://github.com/GuilhermmeDev/doe.it" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 bg-[#2AB036] hover:bg-[#FF5800] text-white px-8 py-3 rounded-lg font-medium transition-colors">
+                        <i data-lucide="github" class="h-5 w-5"></i>
+                        <span>Ver no GitHub</span>
+                    </a>
+                    <button onclick="document.getElementById('commits').scrollIntoView({behavior: 'smooth'})" class="inline-flex items-center space-x-2 border-2 border-[#2AB036] text-[#2AB036] hover:bg-[#FF5800] hover:text-white dark:border-[#FF5800] dark:text-[#FF5800] dark:hover:bg-[#2AB036] dark:hover:text-white px-8 py-3 rounded-lg font-medium transition-colors">
+                        <i data-lucide="git-commit" class="h-5 w-5"></i>
+                        <span>Ver Commits</span>
+                    </button>
+                </div>
+            </div>
+        </section>
 
-  .diferenciais-titulo {
-    margin-bottom: 3rem;
-    color: #000000; /* Cor do título no modo claro */
-  }
+        <!-- Seção Sobre -->
+        <section id="sobre" class="first-section" aria-labelledby="sobre-titulo">
+            <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
+                <div class="font-light sm:text-lg">
+                    <h2 id="sobre-titulo" class="mb-4 text-4xl tracking-tight font-extrabold">Doeit: Inovação e Transparência na Doação Digital</h2>
+                    <p class="mb-4">
+                        Doeit é uma plataforma que conecta doadores e instituições sociais, utilizando QR Codes para garantir a autenticidade e transparência em cada doação.
+                    </p>
+                    <p class="mb-8">
+                        Além disso, o projeto valoriza pequenas iniciativas sociais, ampliando sua visibilidade e fortalecendo redes solidárias.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 gap-4 mt-8">
+                    <figure>
+                        <img class="w-full rounded-lg" src="1.svg" alt="Ilustração mostrando o processo de doação via QR Code" />
+                    </figure>
+                    <figure>
+                        <img class="mt-4 w-full lg:mt-10 rounded-lg" src="2.svg" alt="Ilustração mostrando a conexão entre doadores e instituições" />
+                    </figure>
+                </div>
+            </div>
+        </section>
 
-  .diferencial-card {
-    color: #333333; /* Cor do texto no modo claro */
-    background-color: #ffffff; /* Fundo branco no modo claro */
-    border-radius: 0.5rem;
-    padding: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    border-top: 4px solid #2AB036; /* Cor do topo do card */
-  }
+        <!-- Seção Diferenciais -->
+        <section class="secao-diferenciais" aria-labelledby="diferenciais-titulo">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h3 id="diferenciais-titulo" class="text-4xl font-extrabold text-center mb-12 diferenciais-titulo">
+                    Diferenciais do Doeit
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <article class="diferencial-card">
+                        <div class="flex items-center mb-4">
+                            <svg class="w-8 h-8 text-green-600 mr-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m-6 10h6a2 2 0 002-2V6a2 2 0 00-2-2H9a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            <h4 class="text-xl font-semibold">Transparência Total</h4>
+                        </div>
+                        <p>
+                            Acompanhamento em tempo real via QR Code, garantindo segurança e confiança em todas as etapas da doação.
+                        </p>
+                    </article>
 
-  /* Estilos para o modo escuro */
-  .dark .diferencial-card {
-    color: #ffffff; /* Cor do texto no modo escuro (mais clara) */
-    background-color: #1f2937; /* Fundo escuro no modo escuro */
-    border-top: 4px solid #4CAF50; /* Cor de topo mais clara no modo escuro */
-  }
+                    <article class="diferencial-card">
+                        <div class="flex items-center mb-4">
+                            <svg class="w-8 h-8 text-green-600 mr-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M18 9v6a3 3 0 01-3 3H9a3 3 0 01-3-3V9m6-5v2m0 4h.01M12 17h.01" />
+                            </svg>
+                            <h4 class="text-xl font-semibold">Visibilidade para Pequenas Causas</h4>
+                        </div>
+                        <p>
+                            Ampliamos a voz de pequenas iniciativas sociais, facilitando a conexão com doadores interessados.
+                        </p>
+                    </article>
 
-  .diferencial-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-  }
-
-  .first-section {
-    padding-top: 20px;
-  }
-
-  .diferenciais-titulo {
-  margin-bottom: 3rem;
-  color: #000000; /* Cor padrão no modo claro */
-}
-
-/* Cor no modo escuro */
-.dark .diferenciais-titulo {
-  color: #ffffff; /* Cor branca no modo escuro */
-}
-</style>
-  </head>
-  <body
-    class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300"
-  >
-   <!-- Navbar -->
-<nav class="fixed w-full top-0 z-50 backdrop-blur-md border-b bg-white border-gray-200 dark:bg-gray-950 dark:border-gray-800">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center h-16">
-      <div class="flex items-center space-x-2">
-        <i data-lucide="qr-code" class="h-8 w-8 text-[#2AB036] dark:text-[#FF5800]"></i>
-        <span class="text-xl font-bold dark:text-white">DoeIT</span>
-      </div>
-      <div class="hidden md:flex items-center space-x-8 text-gray-800 dark:text-gray-200">
-        <a href="#sobre" class="hover:text-[#2AB036] dark:hover:text-[#FF5800] transition-colors cursor-pointer">Sobre</a>
-        <a href="#equipe" class="hover:text-[#2AB036] dark:hover:text-[#FF5800] transition-colors cursor-pointer">Equipe</a>
-        <a href="#faq" class="hover:text-[#2AB036] dark:hover:text-[#FF5800] transition-colors cursor-pointer">FAQ</a>
-        <!-- Botão de alternância de tema -->
-        <button id="theme-toggle" class="ml-4 p-2 rounded-full border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Alternar tema">
-          <i id="theme-icon" data-lucide="moon" class="h-6 w-6 text-[#2AB036] dark:text-[#FF5800]"></i>
-        </button>
-      </div>
-    </div>
-  </div>
-</nav>
-
-<!-- Hero Section -->
-<section class="pt-24 pb-20 px-4 sm:px-6 lg:px-8">
-  <div class="max-w-7xl mx-auto text-center">
-    <div class="inline-flex items-center space-x-2 bg-[#E6F9ED] dark:bg-[#232323] text-[#2AB036] dark:text-[#FF5800] px-4 py-2 rounded-full text-sm font-medium mb-8">
-      <i data-lucide="shield" class="h-4 w-4"></i>
-      <span>Sistema de Doação Seguro</span>
-    </div>
-    <h1 class="text-4xl md:text-6xl font-bold mb-6">
-      <span class="bg-gradient-to-r from-[#2AB036] to-[#FF5800] bg-clip-text text-transparent">DoeIT</span><br />
-      <span id="typing-text" class="typing"></span>
-    </h1>
-    <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
-      Sistema inovador de doações com validação por QR Code, desenvolvido em Laravel pelos alunos da EEEP Maria Célia Pinheiro Falcão.
-      Transparência e segurança em cada doação.
-    </p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-      <a href="https://github.com/GuilhermmeDev/doe.it" target="_blank" class="inline-flex items-center space-x-2 bg-[#2AB036] hover:bg-[#FF5800] text-white px-8 py-3 rounded-lg font-medium transition-colors">
-        <i data-lucide="github" class="h-5 w-5"></i>
-        <span>Ver no GitHub</span>
-      </a>
-      <button onclick="document.getElementById('commits').scrollIntoView({behavior: 'smooth'})" class="inline-flex items-center space-x-2 border-2 border-[#2AB036] text-[#2AB036] hover:bg-[#FF5800] hover:text-white dark:border-[#FF5800] dark:text-[#FF5800] dark:hover:bg-[#2AB036] dark:hover:text-white px-8 py-3 rounded-lg font-medium transition-colors">
-        <i data-lucide="git-commit" class="h-5 w-5"></i>
-        <span>Ver Commits</span>
-      </button>
-    </div>
-  </div>
-</section>
-
-<!-- Sobre Section -->
-    <section class="first-section">
-    <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
-      <div class="font-light sm:text-lg">
-        <h2 class="mb-4 text-4xl tracking-tight font-extrabold">Doeit: Inovação e Transparência na Doação Digital</h2>
-        <p class="mb-4">
-          Doeit é uma plataforma que conecta doadores e instituições sociais, utilizando QR Codes para garantir a autenticidade e transparência em cada doação.
-        </p>
-        <p class="mb-8">
-          Além disso, o projeto valoriza pequenas iniciativas sociais, ampliando sua visibilidade e fortalecendo redes solidárias.
-        </p>
-      </div>
-      <div class="grid grid-cols-2 gap-4 mt-8">
-        <img class="w-full rounded-lg" src="1.svg" alt="1.svg " />
-        
-        <img class="mt-4 w-full lg:mt-10 rounded-lg" src="2.svg" alt="  " />
-      
-      </div>
-    </div>
-  </section>
-<section id="sobre" class="secao-diferenciais">
-  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h3 class="text-4xl font-extrabold text-center mb-12 diferenciais-titulo">
-      Diferenciais do Doeit
-    </h3>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="diferencial-card">
-        <div class="flex items-center mb-4">
-          <svg class="w-8 h-8 text-green-600 mr-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m-6 10h6a2 2 0 002-2V6a2 2 0 00-2-2H9a2 2 0 00-2 2v12a2 2 0 002 2z" />
-          </svg>
-          <h4 class="text-xl font-semibold">Transparência Total</h4>
-        </div>
-        <p>
-          Acompanhamento em tempo real via QR Code, garantindo segurança e confiança em todas as etapas da doação.
-        </p>
-      </div>
-
-      <div class="diferencial-card">
-        <div class="flex items-center mb-4">
-          <svg class="w-8 h-8 text-green-600 mr-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M18 9v6a3 3 0 01-3 3H9a3 3 0 01-3-3V9m6-5v2m0 4h.01M12 17h.01" />
-          </svg>
-          <h4 class="text-xl font-semibold">Visibilidade para Pequenas Causas</h4>
-        </div>
-        <p>
-          Ampliamos a voz de pequenas iniciativas sociais, facilitando a conexão com doadores interessados.
-        </p>
-      </div>
-
-      <div class="diferencial-card">
-        <div class="flex items-center mb-4">
-          <svg class="w-8 h-8 text-green-600 mr-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M12 20h.01M4 4l16 16" />
-          </svg>
-          <h4 class="text-xl font-semibold">Doação Consciente</h4>
-        </div>
-        <p>
-          Incentivamos a empatia e a corresponsabilidade, promovendo um engajamento social mais ativo e ético.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+                    <article class="diferencial-card">
+                        <div class="flex items-center mb-4">
+                            <svg class="w-8 h-8 text-green-600 mr-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M12 20h.01M4 4l16 16" />
+                            </svg>
+                            <h4 class="text-xl font-semibold">Doação Consciente</h4>
+                        </div>
+                        <p>
+                            Incentivamos a empatia e a corresponsabilidade, promovendo um engajamento social mais ativo e ético.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
 
  
     <!-- Equipe Section -->
@@ -1400,127 +1335,130 @@
     </section>
     </div>
     </section>
-    
-    <section id="faq" class="py-20 bg-gray-50 dark:bg-gray-900">
-      <section class="py-12 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-        <div class="text-center mb-12">
-            <h2 class="text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-                Dúvidas Frequentes
-            </h2>
-            <p class="text-lg text-gray-600 max-w-2xl mx-auto dark:text-white">
-                Encontre respostas para as perguntas mais comuns sobre nossa plataforma de solidariedade!
-            </p>
-        </div>
-        <div class="grid md:grid-cols-1 gap-6">
-            <!-- Coluna 1 -->
-            <div class="space-y-6">
-                <!-- FAQ 1 -->
-                <div class="bg-white rounded-lg dark:bg-gray-800 shadow-md overflow-hidden border-l-4 border-green-600 transition-all duration-300 hover:shadow-lg">
-                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left focus:outline-none">
-                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white  ">
-                            Como posso receber ajuda com alimentação?
-                        </h3>
-                        <svg class="h-5 w-5 text-white-600 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </button>
-                    <div class="faq-content px-6 pb-6 hidden">
-                        <p class="text-gray-600 faq-answer dark:text-white">
-                            Na DoeIT, você pode criar uma campanha explicando sua necessidade de alimentação. Nossa comunidade de doadores será notificada e poderá entrar em contato para oferecer ajuda diretamente ou através de nossos parceiros.
-                        </p>
-                    </div>
-                </div>
 
-                <!-- FAQ 2 -->
-                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden border-l-4 border-green-600 transition-all duration-300 hover:shadow-lg">
-                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left focus:outline-none">
-                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white">
-                            Quanto tempo leva para aprovarem minha campanha?
-                        </h3>
-                        <svg class="h-5 w-5 text-white-600 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </button>
-                    <div class="faq-content px-6 pb-6 hidden">
-                        <p class="text-gray-600 faq-answer dark:text-white">
-                            Nossa equipe verifica todas as campanhas em até 24 horas. Para agilizar, certifique-se de fornecer todas as informações necessárias e documentos comprobatórios quando disponíveis.
-                        </p>
-                    </div>
+        <!-- Seção FAQ -->
+        <section id="faq" class="py-20 bg-gray-50 dark:bg-gray-900" aria-labelledby="faq-heading">
+            <div class="py-12 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 id="faq-heading" class="text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+                        Dúvidas Frequentes
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto dark:text-white">
+                        Encontre respostas para as perguntas mais comuns sobre nossa plataforma de solidariedade!
+                    </p>
                 </div>
+                
+                <div class="grid md:grid-cols-1 gap-6">
+                    <!-- Coluna 1 -->
+                    <div class="space-y-6">
+                        <!-- FAQ 1 -->
+                        <article class="bg-white rounded-lg dark:bg-gray-800 shadow-md overflow-hidden border-l-4 border-green-600 transition-all duration-300 hover:shadow-lg">
+                            <button class="faq-toggle w-full flex justify-between items-center p-6 text-left focus:outline-none" aria-expanded="false" aria-controls="faq1-content">
+                                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">
+                                    Como posso receber ajuda com alimentação?
+                                </h3>
+                                <svg class="h-5 w-5 text-white-600 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div id="faq1-content" class="faq-content px-6 pb-6 hidden" aria-hidden="true">
+                                <p class="text-gray-600 faq-answer dark:text-white">
+                                    Na DoeIT, você pode criar uma campanha explicando sua necessidade de alimentação. Nossa comunidade de doadores será notificada e poderá entrar em contato para oferecer ajuda diretamente ou através de nossos parceiros.
+                                </p>
+                            </div>
+                        </article>
 
-                <!-- FAQ 3 -->
-                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden border-l-4 border-green-600 transition-all duration-300 hover:shadow-lg">
-                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left focus:outline-none">
-                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white">
-                            Como funciona o processo de doação?
-                        </h3>
-                        <svg class="h-5 w-5 text-white-600 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </button>
-                    <div class="faq-content px-6 pb-6 hidden">
-                        <p class="text-gray-600 faq-answer dark:text-white">
-                            Você pode doar diretamente para campanhas específicas ou para nosso fundo geral. As doações podem ser em dinheiro, alimentos ou outros recursos, conforme a necessidade identificada.
-                        </p>
+                        <!-- FAQ 2 -->
+                        <article class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden border-l-4 border-green-600 transition-all duration-300 hover:shadow-lg">
+                            <button class="faq-toggle w-full flex justify-between items-center p-6 text-left focus:outline-none" aria-expanded="false" aria-controls="faq2-content">
+                                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">
+                                    Quanto tempo leva para aprovarem minha campanha?
+                                </h3>
+                                <svg class="h-5 w-5 text-white-600 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div id="faq2-content" class="faq-content px-6 pb-6 hidden" aria-hidden="true">
+                                <p class="text-gray-600 faq-answer dark:text-white">
+                                    Nossa equipe verifica todas as campanhas em até 24 horas. Para agilizar, certifique-se de fornecer todas as informações necessárias e documentos comprobatórios quando disponíveis.
+                                </p>
+                            </div>
+                        </article>
+
+                        <!-- FAQ 3 -->
+                        <article class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden border-l-4 border-green-600 transition-all duration-300 hover:shadow-lg">
+                            <button class="faq-toggle w-full flex justify-between items-center p-6 text-left focus:outline-none" aria-expanded="false" aria-controls="faq3-content">
+                                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">
+                                    Como funciona o processo de doação?
+                                </h3>
+                                <svg class="h-5 w-5 text-white-600 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div id="faq3-content" class="faq-content px-6 pb-6 hidden" aria-hidden="true">
+                                <p class="text-gray-600 faq-answer dark:text-white">
+                                    Você pode doar diretamente para campanhas específicas ou para nosso fundo geral. As doações podem ser em dinheiro, alimentos ou outros recursos, conforme a necessidade identificada.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Coluna 2 -->
+                    <div class="space-y-6">
+                        <!-- FAQ 4 -->
+                        <article class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden border-l-4 border-green-600 transition-all duration-300 hover:shadow-lg">
+                            <button class="faq-toggle w-full flex justify-between items-center p-6 text-left focus:outline-none" aria-expanded="false" aria-controls="faq4-content">
+                                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">
+                                    A DoeIT cobra taxas sobre as doações?
+                                </h3>
+                                <svg class="h-5 w-5 text-white-600 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div id="faq4-content" class="faq-content px-6 pb-6 hidden" aria-hidden="true">
+                                <p class="text-gray-600 faq-answer dark:text-white">
+                                    Não cobramos nenhuma taxa sobre as doações. 100% do valor doado é destinado aos beneficiários. Nossos custos operacionais são cobertos por doações específicas para essa finalidade.
+                                </p>
+                            </div>
+                        </article>
+
+                        <!-- FAQ 5 -->
+                        <article class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden border-l-4 border-green-600 transition-all duration-300 hover:shadow-lg">
+                            <button class="faq-toggle w-full flex justify-between items-center p-6 text-left focus:outline-none" aria-expanded="false" aria-controls="faq5-content">
+                                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">
+                                    Como verificam as campanhas?
+                                </h3>
+                                <svg class="h-5 w-5 text-white-600 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div id="faq5-content" class="faq-content px-6 pb-6 hidden" aria-hidden="true">
+                                <p class="text-gray-600 faq-answer dark:text-white">
+                                    Temos uma equipe dedicada que verifica documentos e entra em contato com os solicitantes. Além disso, implementamos um sistema de feedback onde doadores podem acompanhar o uso dos recursos.
+                                </p>
+                            </div>
+                        </article>
+
+                        <!-- FAQ 6 -->
+                        <article class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden border-l-4 border-green-600 transition-all duration-300 hover:shadow-lg">
+                            <button class="faq-toggle w-full flex justify-between items-center p-6 text-left focus:outline-none" aria-expanded="false" aria-controls="faq6-content">
+                                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">
+                                    Posso ajudar de outras formas além de doações?
+                                </h3>
+                                <svg class="h-5 w-5 text-white-600 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div id="faq6-content" class="faq-content px-6 pb-6 hidden" aria-hidden="true">
+                                <p class="text-gray-600 faq-answer dark:text-white">
+                                    Sim! Você pode se voluntariar para ajudar na verificação de campanhas, divulgar necessidades em sua rede, ou oferecer serviços profissionais que possam beneficiar nossa comunidade.
+                                </p>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </div>
-
-            <!-- Coluna 2 -->
-            <div class="space-y-6">
-                <!-- FAQ 4 -->
-                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden border-l-4 border-green-600 transition-all duration-300 hover:shadow-lg">
-                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left focus:outline-none">
-                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white">
-                            A DoeIT cobra taxas sobre as doações?
-                        </h3>
-                        <svg class="h-5 w-5 text-white-600 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </button>
-                    <div class="faq-content px-6 pb-6 hidden">
-                        <p class="text-gray-600 faq-answer dark:text-white">
-                            Não cobramos nenhuma taxa sobre as doações. 100% do valor doado é destinado aos beneficiários. Nossos custos operacionais são cobertos por doações específicas para essa finalidade.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- FAQ 5 -->
-                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden border-l-4 border-green-600 transition-all duration-300 hover:shadow-lg">
-                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left focus:outline-none">
-                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white">
-                            Como verificam as campanhas?
-                        </h3>
-                        <svg class="h-5 w-5 text-white-600 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </button>
-                    <div class="faq-content px-6 pb-6 hidden">
-                        <p class="text-gray-600 faq-answer dark:text-white">
-                            Temos uma equipe dedicada que verifica documentos e entra em contato com os solicitantes. Além disso, implementamos um sistema de feedback onde doadores podem acompanhar o uso dos recursos.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- FAQ 6 -->
-                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden border-l-4 border-green-600 transition-all duration-300 hover:shadow-lg">
-                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left focus:outline-none">
-                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white">
-                            Posso ajudar de outras formas além de doações?
-                        </h3>
-                        <svg class="h-5 w-5 text-white-600 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </button>
-                    <div class="faq-content px-6 pb-6 hidden">
-                        <p class="text-gray-600 faq-answer dark:text-white">
-                            Sim! Você pode se voluntariar para ajudar na verificação de campanhas, divulgar necessidades em sua rede, ou oferecer serviços profissionais que possam beneficiar nossa comunidade.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
     <script>
         document.querySelectorAll('.faq-toggle').forEach(button => {
@@ -1545,58 +1483,67 @@
     </script>
     </section>
 
-    <!-- Commits Section -->
-    <section id="commits" class="py-20 bg-white dark:bg-gray-900">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-            Histórico de Desenvolvimento
-          </h2>
-          <p class="text-xl text-gray-600 dark:text-gray-300">
-            Acompanhe os últimos commits do projeto
-          </p>
-        </div>
-        <div id="commits-container" class="space-y-4 text-sm text-left"></div>
-        <div id="pagination" class="flex justify-center mt-8">
-          <button
-            id="prev-button"
-            class="bg-[#2AB036] dark:bg-[#FF5800] text-white px-4 py-2 rounded-lg mr-2 cursor-pointer"
-            disabled
-          >
-            Anterior
-          </button>
-          <button
-            id="next-button"
-            class="bg-[#2AB036] dark:bg-[#FF5800] text-white px-4 py-2 rounded-lg cursor-pointer"
-          >
-            Próximo
-          </button>
-        </div>
-      </div>
-    </section>
+          <!-- Seção Commits -->
+        <section id="commits" class="py-20 bg-white dark:bg-gray-900" aria-labelledby="commits-heading">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 id="commits-heading" class="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
+                        Histórico de Desenvolvimento
+                    </h2>
+                    <p class="text-xl text-gray-600 dark:text-gray-300">
+                        Acompanhe os últimos commits do projeto
+                    </p>
+                </div>
+                
+                <div id="commits-container" class="space-y-4 text-sm text-left" role="region" aria-live="polite">
+                    <!-- Os commits serão inseridos aqui dinamicamente via JavaScript -->
+                </div>
+                
+                <nav id="pagination" class="flex justify-center mt-8" aria-label="Navegação entre páginas de commits">
+                    <button
+                        id="prev-button"
+                        class="bg-[#2AB036] dark:bg-[#FF5800] text-white px-4 py-2 rounded-lg mr-2 cursor-pointer"
+                        disabled
+                        aria-label="Página anterior"
+                        aria-disabled="true"
+                    >
+                        Anterior
+                    </button>
+                    <button
+                        id="next-button"
+                        class="bg-[#2AB036] dark:bg-[#FF5800] text-white px-4 py-2 rounded-lg cursor-pointer"
+                        aria-label="Próxima página"
+                    >
+                        Próximo
+                    </button>
+                </nav>
+            </div>
+        </section>
+    </main>
 
-    <!-- Footer -->
-    <footer
-      class="py-12 border-t bg-white border-gray-200 dark:bg-gray-950 dark:border-gray-800"
-    >
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center">
-          <div class="flex items-center justify-center space-x-2 mb-4">
-            <i
-              data-lucide="qr-code"
-              class="h-8 w-8 text-[#2AB036] dark:text-[#FF5800]"
-            ></i>
-            <span class="text-2xl font-bold dark:text-white">DoeIT</span>
-          </div>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">
-            Sistema de doações com validação por QR Code
-          </p>
-          <p class="text-sm text-gray-500 dark:text-gray-400">
-            © 2025 EEEP Maria Célia Pinheiro Falcão. Projeto desenvolvido pelos
-            alunos.
-          </p>
+    <!-- Rodapé -->
+    <footer class="py-12 border-t bg-white border-gray-200 dark:bg-gray-950 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-2 mb-4">
+                    <i
+                        data-lucide="qr-code"
+                        class="h-8 w-8 text-[#2AB036] dark:text-[#FF5800]"
+                        aria-hidden="true"
+                    ></i>
+                    <span class="text-2xl font-bold dark:text-white">DoeIT</span>
+                </div>
+                <p class="text-gray-600 dark:text-gray-300 mb-4">
+                    Sistema de doações com validação por QR Code
+                </p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">
+                    © 2025 EEEP Maria Célia Pinheiro Falcão. Projeto desenvolvido pelos alunos.
+                </p>
+                <address class="not-italic mt-4 text-gray-500 dark:text-gray-400">
+                    Contato: <a href="mailto:contato@doeit.com" class="hover:underline">contato@doeit.com</a>
+                </address>
+            </div>
         </div>
-      </div>
     </footer>
     <script src="scripts/script.js"></script>
   </body>
