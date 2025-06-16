@@ -1,5 +1,6 @@
+// jest.config.js
 module.exports = {
-  testEnvironment: 'node',
+  testEnvironment: 'jsdom',
   testMatch: ['**/__tests__/**/*.test.js', '**/?(*.)+(spec|test).js'],
   transform: {
     '^.+\\.jsx?$': 'babel-jest',

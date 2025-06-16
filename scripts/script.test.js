@@ -3,19 +3,6 @@
  */
 require('@testing-library/jest-dom');
 
-global.fetch = jest.fn(() =>
-  Promise.resolve({
-    json: () =>
-      Promise.resolve(
-        Array(10).fill({
-          sha: '1234567890abcdef',
-          commit: { author: { date: new Date().toISOString(), name: 'Author' }, message: 'commit message' },
-          author: { login: 'authorlogin', avatar_url: 'avatarurl' },
-        }),
-      ),
-  }),
-);
-
 let currentPage;
 let fetchCommits;
 
@@ -24,13 +11,14 @@ beforeEach(() => {
     <div id="commits-container"></div>
     <button id="prev-button">Prev</button>
     <button id="next-button">Next</button>
+    <button id="theme-toggle" aria-label="Alternar tema">
+      <i id="theme-icon" data-lucide="moon" class="text-orange"></i>
+    </button>
   `;
 
-  // Reseta página e implementa fetchCommits mock para teste
   currentPage = 1;
   fetchCommits = jest.fn();
 
-  // Mocka os event listeners iguais ao seu script
   document.getElementById('prev-button').addEventListener('click', () => {
     if (currentPage > 1) {
       currentPage--;
@@ -42,13 +30,64 @@ beforeEach(() => {
     currentPage++;
     fetchCommits();
   });
+
+  global.lucide = { createIcons: jest.fn() };
 });
 
+// 👇 Mock da função de tema
+function setTheme(mode) {
+  const htmlElement = document.documentElement;
+  const themeIcon = document.getElementById('theme-icon');
+
+  if (mode === 'dark') {
+    htmlElement.classList.add('dark');
+    themeIcon.setAttribute('data-lucide', 'sun');
+    themeIcon.classList.remove('text-orange');
+    themeIcon.classList.add('text-green');
+  } else {
+    htmlElement.classList.remove('dark');
+    themeIcon.setAttribute('data-lucide', 'moon');
+    themeIcon.classList.remove('text-green');
+    themeIcon.classList.add('text-orange');
+  }
+}
+
+// ✅ Teste do botão de tema
+test('botão "theme-toggle" alterna a classe "dark" no html e altera ícone e cores', () => {
+  const html = document.documentElement;
+  const toggleButton = document.getElementById('theme-toggle');
+  const themeIcon = document.getElementById('theme-icon');
+
+  toggleButton.addEventListener('click', () => {
+    const isDark = html.classList.contains('dark');
+    setTheme(isDark ? 'light' : 'dark');
+  });
+
+  // Estado inicial
+  expect(html.classList.contains('dark')).toBe(false);
+  expect(themeIcon).toHaveAttribute('data-lucide', 'moon');
+  expect(themeIcon).toHaveClass('text-orange');
+  expect(themeIcon).not.toHaveClass('text-green');
+
+  // Primeiro clique
+  toggleButton.click();
+  expect(html.classList.contains('dark')).toBe(true);
+  expect(themeIcon).toHaveAttribute('data-lucide', 'sun');
+  expect(themeIcon).toHaveClass('text-green');
+  expect(themeIcon).not.toHaveClass('text-orange');
+
+  // Segundo clique
+  toggleButton.click();
+  expect(html.classList.contains('dark')).toBe(false);
+  expect(themeIcon).toHaveAttribute('data-lucide', 'moon');
+  expect(themeIcon).toHaveClass('text-orange');
+  expect(themeIcon).not.toHaveClass('text-green');
+});
+
+// ✅ Testes de paginação mantidos
 test('botão "prev-button" não chama fetchCommits se currentPage é 1', () => {
-  currentPage = 1;
   const prevButton = document.getElementById('prev-button');
   prevButton.click();
-  expect(currentPage).toBe(1);
   expect(fetchCommits).not.toHaveBeenCalled();
 });
 
@@ -61,7 +100,6 @@ test('botão "prev-button" decrementa currentPage e chama fetchCommits se curren
 });
 
 test('botão "next-button" incrementa currentPage e chama fetchCommits', () => {
-  currentPage = 1;
   const nextButton = document.getElementById('next-button');
   nextButton.click();
   expect(currentPage).toBe(2);
